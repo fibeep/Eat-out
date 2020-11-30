@@ -18,6 +18,8 @@ def rest_list():
     """Displays the homepage."""
 
     rest_data = mongo.db.rest.find({})
+    print(rest_data)
+ 
     context = {
         'restaurants' : rest_data
     }
@@ -77,6 +79,11 @@ def opinion(rest_id):
 
     return redirect(url_for('detail', rest_id=rest_id))
 
+@app.route('/delete/<rest_id>', methods=['POST'])
+def delete(rest_id):
+    mongo.db.restaurants.delete_one({'_id' : ObjectId(rest_id)})
+    mongo.db.opinions.delete_many({'rest_id' : rest_id})
+    return redirect(url_for('rest_list'))
 # @app.route('/create_group', methods=['GET', 'POST'])
 # def create_group():
 #     if request.method == 'POST':
