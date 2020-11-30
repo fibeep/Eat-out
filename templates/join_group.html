@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main>
+    <h1>Join Group</h1>
+
+    <form method='GET'>
+        <fieldset>
+            <legend>Please fill out required information:</legend>
+
+            <label>
+                Your's name:
+                <input type="text" name="participant_name">
+            </label>
+
+            <label>
+                Leader's code:
+                <input type="text" name="code">
+            </label>
+
+            <input type="submit" class="submit" value="Submit!">
+        </fieldset>
+    </form>
+</main>
+
+{% endblock content %}

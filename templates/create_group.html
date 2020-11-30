@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main>
+    <h1>Create Group</h1>
+
+    <form method='POST'>
+        <fieldset>
+            <legend>Please fill out your info:</legend>
+
+            <label>
+                Your name:
+                <input type="text" name="leader">
+            </label>
+
+        
+
+            <input type="submit" class="submit" value="Submit!">
+        </fieldset>
+    </form>
+</main>
+
+{% endblock content %}
