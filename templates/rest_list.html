@@ -4,9 +4,11 @@
 <main>
     <section class="jumbotron text-center">
         <div class="container">
-            <h1>Album example</h1>
-            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-                etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <h1>Eat Out</h1>
+            <p class="lead text-muted">Eat out is an app designed to help you and your friends choose where you will go out to eat. One user should make
+                a group which the rest will join. Each user can add restaurants and leave their opinions on them, finally voting in order to chose what restaurant you
+                will all go to.
+            </p>
             <p>
                 <a href="#" class="btn btn-primary my-2">Create Group</a>
                 <a href="#" class="btn btn-secondary my-2">Join Group</a>
@@ -17,7 +19,7 @@
 
 
     <div class="row">
-        {% for restaurant in restaurants %}
+        
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +43,7 @@
         </div>
 
 
-        {% endfor %}
+        
 
         <ul>
         {% for restaurant in restaurants %}
