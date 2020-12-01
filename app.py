@@ -12,14 +12,13 @@ app = Flask(__name__)
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/eat-out-database"
 mongo = PyMongo(app)
-
+my_db = mongo.db
 @app.route('/')
 def rest_list():
     """Displays the homepage."""
 
-    rest_data = mongo.db.rest.find({})
-    print(rest_data)
- 
+    rest_data = my_db.restaurants.find({})
+
     context = {
         'restaurants' : rest_data
     }
@@ -35,7 +34,7 @@ def create_rest():
             'type' : request.form.get('type')
         }
 
-        insert_result = mongo.db.restaurants.insert_one(new_rest)
+        insert_result = my_db.restaurants.insert_one(new_rest)
 
         return redirect(url_for('detail', rest_id=insert_result.inserted_id))
     else:
@@ -44,7 +43,7 @@ def create_rest():
 @app.route('/restaurant/<rest_id>')
 def detail(rest_id):
     
-    rest_to_show = mongo.db.restaurants.find_one({'_id' : ObjectId(rest_id)})
+    rest_to_show = my_db.restaurants.find_one({'_id' : ObjectId(rest_id)})
 
     restaurant = {
         'name': rest_to_show['name'],
@@ -52,7 +51,7 @@ def detail(rest_id):
         'id' : str(rest_to_show['_id'])
     }
 
-    opinions = mongo.db.opinions.find({'rest_id' : rest_id})
+    opinions = my_db.opinions.find({'rest_id' : rest_id})
     rest_opinions = []
     for opinion in opinions:
         rest_opinions.append({
@@ -75,14 +74,14 @@ def opinion(rest_id):
         'opinion' : request.form.get('opinion')
     }
 
-    mongo.db.opinions.insert_one(new_opinion)
+    my_db.opinions.insert_one(new_opinion)
 
     return redirect(url_for('detail', rest_id=rest_id))
 
 @app.route('/delete/<rest_id>', methods=['POST'])
 def delete(rest_id):
-    mongo.db.restaurants.delete_one({'_id' : ObjectId(rest_id)})
-    mongo.db.opinions.delete_many({'rest_id' : rest_id})
+    my_db.restaurants.delete_one({'_id' : ObjectId(rest_id)})
+    my_db.opinions.delete_many({'rest_id' : rest_id})
     return redirect(url_for('rest_list'))
 # @app.route('/create_group', methods=['GET', 'POST'])
 # def create_group():
