@@ -13,7 +13,7 @@
         {{restaurant.type}}
         <br><br>
 
-        <a class="nav" href="/edit/{{restaurant.id}}">Edit Restaurant</a><br><br>
+        
     </section>
 
     <form action="/opinion/{{restaurant.id}}" method="POST">
@@ -45,7 +45,7 @@
     </section>
 
     <form action="/delete/{{restaurant.id}}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
-        <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
+        <input type="submit" class="nav" onclick="delete_modal()" value="Delete Restaurant">
     </form>
 </main>
 

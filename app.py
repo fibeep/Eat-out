@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/eat-out-database"
 mongo = PyMongo(app)
 my_db = mongo.db
+
 @app.route('/')
 def rest_list():
     """Displays the homepage."""
@@ -52,26 +53,28 @@ def detail(rest_id):
     }
 
     opinions = my_db.opinions.find({'rest_id' : rest_id})
-    rest_opinions = []
+    
+    restaurant_opinions = []
     for opinion in opinions:
-        rest_opinions.append({
+        restaurant_opinions.append({
             'name' : opinion['name'],
             'opinion' : opinion['opinion']
         })
 
     context = {
         'restaurant': restaurant,
-        'opinions' : rest_opinions
+        'opinions' : restaurant_opinions
     }
 
     return render_template('detail.html', **context)
 
 @app.route('/opinion/<rest_id>', methods=['POST'])
 def opinion(rest_id):
-
+    
     new_opinion = {
         'name' : request.form.get('user_name'),
-        'opinion' : request.form.get('opinion')
+        'opinion' : request.form.get('opinion'),
+        'rest_id' : rest_id
     }
 
     my_db.opinions.insert_one(new_opinion)
