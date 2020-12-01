@@ -31,3 +31,46 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+form {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form fieldset {
+    border: 1px solid #229954;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+form legend {
+    color: #229954;
+    text-align: center;
+    font-family: 'Homemade Apple', cursive;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+form input {
+    border: 1px solid #229954;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 700px;
+}
+
+form input.submit {
+    align-self: flex-end;
+}
+
+form#delete-form {
+    display: flex;
+    align-items: center;
+}
