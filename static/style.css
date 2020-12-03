@@ -1,3 +1,5 @@
+/* Styles code inspired by Bootstrap Album page and WEB1.1 Homework 5 */
+
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -57,7 +59,7 @@ nav {
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #285F95;
+    background-color:  #e81313;
     position: relative;
     top: 0;
     left: 0
@@ -66,7 +68,7 @@ nav {
 nav a {
     margin: auto 0;
     padding: 0 25px;
-    background-color: #285F95;
+    background-color:  #e81313;
     color: white;
     text-decoration: none;
 }
@@ -80,7 +82,7 @@ footer {
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-color: #285F95;
+    background-color: #e81313;
     color: white;
     position: absolute;
     bottom: 0;
@@ -89,7 +91,7 @@ footer {
 
 a.nav, input.nav, form input.submit {
     border: none;
-    background-color: #285F95;
+    background-color:  #e81313;
     border-radius: 3px;
     color: white;
     padding: 10px 15px;
@@ -98,6 +100,10 @@ a.nav, input.nav, form input.submit {
 }
 
 
+.red {
+    color: #e81313
+}
+
 
 
 
@@ -105,14 +111,14 @@ a.nav, input.nav, form input.submit {
 
 
 div.card-content a {
-    color: #285F95;
+    color:  #e81313;
     font-weight: bold;
     text-decoration: none;
     align-self: center;
 }
 
 h1, h2, h3 {
-    color: #285F95;
+    color:  #e81313;
     font-family: 'Homemade Apple', cursive;
 }
 
@@ -125,14 +131,14 @@ form {
 }
 
 form fieldset {
-    border: 1px solid #285F95;
+    border: 1px solid  #e81313;
     border-radius: 20px;
     padding: 10px 20px;
     width: 100%;
 }
 
 form legend {
-    color: #285F95;
+    color:  #e81313;
     text-align: center;
     font-family: 'Homemade Apple', cursive;
 }
@@ -144,7 +150,7 @@ form label {
 }
 
 form input {
-    border: 1px solid #285F95;
+    border: 1px solid  #e81313;
     padding: 10px;
     margin: 10px 0;
     max-width: 700px;
