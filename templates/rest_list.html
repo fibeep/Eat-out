@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content%}
 
-<main>
-    <section class="jumbotron text-center">
+
+    <section class="jumbotron text-center main-img">
         <div class="container">
-            <h1>Making Dining Out With Friends, Easy</h1>
-            <p class="lead text-muted">Eat out is an app designed to help you and your friends choose where you will go out to eat. One user should make
-                a group which the rest will join. Each user can add restaurants and leave their opinions on them, finally voting in order to chose what restaurant you
-                will all go to.
-            </p>
+            <div class="darkbg">
+                <h1>Making Dining Out With Friends, Easy</h1>
+                <p class="lead " style="color: white;">Eat out is an app designed to help you and your friends choose where you will go out to eat. One user should make
+                    a group which the rest will join. Each user can add restaurants and leave their opinions on them, finally voting in order to chose what restaurant you
+                    will all go to.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -37,5 +39,5 @@
         {% endfor %}
 
     </div>
-</main>
+
 {% endblock content %}
